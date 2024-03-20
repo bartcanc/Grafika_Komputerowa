@@ -753,15 +753,15 @@ function Tick()
   przes,-0.5,tz,1
   ];
 
-  uMVMatrix = MatrixMul(uMVMatrix,uMVRotX);
-  uMVMatrix = MatrixMul(uMVMatrix,uMVRotY);
-  uMVMatrix = MatrixMul(uMVMatrix,uMVRotZ);
+  uPMatrix = MatrixMul(uMVRotX,uPMatrix);
+  uPMatrix = MatrixMul(uMVRotY,uPMatrix);
+  uPMatrix = MatrixMul(uMVRotZ,uPMatrix);
   
   //uMVMatrix = MatrixMul(uMVMatrix,uMVTranslateX);
   //uMVMatrix = MatrixMul(uMVMatrix,uMVTranslateY);
   
   uMVMatrix = MatrixMul(uMVMatrix,uMVTranslateZ);
-  
+  angleY=0;
 
   //alert(uPMatrix);
   

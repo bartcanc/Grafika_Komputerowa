@@ -189,32 +189,31 @@ function CreateShpere(x,y,z,radius, numStepsElevation, numStepsAngle)
   return [vertexPosition, vertexColor, vertexCoords, vertexNormal];
 }
 
-function setBuffers(x, vertexPositionBuffer, vertexColorBuffer, vertexCoordsBuffer, vertexNormalBuffer, vertexPosition, vertexColor, vertexCoords, vertexNormal){
-  vertexPositionBuffer = gl.createBuffer(); //Stworzenie tablicy w pamieci karty graficznej
-  gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexPosition), gl.STATIC_DRAW);
-  vertexPositionBuffer.itemSize = 3; //zdefiniowanie liczby współrzednych per wierzchołek
-  vertexPositionBuffer.numItems = vertexPosition.length/9; //Zdefinoiowanie liczby trójkątów w naszym buforze
+// function setBuffers(vertexPositionBuffer, vertexColorBuffer, vertexCoordsBuffer, vertexNormalBuffer, vertexPosition, vertexColor, vertexCoords, vertexNormal){
+//   vertexPositionBuffer = gl.createBuffer(); //Stworzenie tablicy w pamieci karty graficznej
+//   gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
+//   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexPosition), gl.STATIC_DRAW);
+//   vertexPositionBuffer.itemSize = 3; //zdefiniowanie liczby współrzednych per wierzchołek
+//   vertexPositionBuffer.numItems = vertexPosition.length/9; //Zdefinoiowanie liczby trójkątów w naszym buforze
   
-  vertexColorBuffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexColor), gl.STATIC_DRAW);
-  vertexColorBuffer.itemSize = 3;
-  vertexColorBuffer.numItems = vertexColor.length/9;
+//   vertexColorBuffer = gl.createBuffer();
+//   gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
+//   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexColor), gl.STATIC_DRAW);
+//   vertexColorBuffer.itemSize = 3;
+//   vertexColorBuffer.numItems = vertexColor.length/9;
   
-  vertexCoordsBuffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, vertexCoordsBuffer);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexCoords), gl.STATIC_DRAW);
-  vertexCoordsBuffer.itemSize = 2;
-  vertexCoordsBuffer.numItems = vertexCoords.length/6;
-  
-  vertexNormalBuffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, vertexNormalBuffer);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexNormal), gl.STATIC_DRAW);
-  vertexNormalBuffer.itemSize = 3;
-  vertexNormalBuffer.numItems = vertexNormal.length/9;
-  return 1;
-}
+//   vertexNormalBuffer = gl.createBuffer();
+//   gl.bindBuffer(gl.ARRAY_BUFFER, vertexNormalBuffer);
+//   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexNormal), gl.STATIC_DRAW);
+//   vertexNormalBuffer.itemSize = 3;
+//   vertexNormalBuffer.numItems = vertexNormal.length/9;
+
+//   vertexCoordsBuffer = gl.createBuffer();
+//   gl.bindBuffer(gl.ARRAY_BUFFER, vertexCoordsBuffer);
+//   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexCoords), gl.STATIC_DRAW);
+//   vertexCoordsBuffer.itemSize = 2;
+//   vertexCoordsBuffer.numItems = vertexCoords.length/6;
+// }
 
 function startGL() 
 {
@@ -291,10 +290,10 @@ function startGL()
 
   [vertexPosition, vertexColor, vertexCoords, vertexNormal] = CreateShpere(0,0,0,1, 6, 12); 
 
-  //setBuffers(vertexPositionBuffer, vertexColorBuffer, vertexCoordsBuffer, vertexNormalBuffer, vertexPosition, vertexColor, vertexCoords, vertexNormal);
+  //setBuffers(vertexColorBuffer, vertexCoordsBuffer, vertexNormalBuffer, vertexPosition, vertexColor, vertexCoords, vertexNormal);
   
   
-  // tak samo z tym zestawem, tyle ile segmentów tyle linii 286-308 trzeba napisać-----------------------------------
+  //tak samo z tym zestawem, tyle ile segmentów tyle linii 286-308 trzeba napisać-----------------------------------
   vertexPositionBuffer = gl.createBuffer(); //Stworzenie tablicy w pamieci karty graficznej
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexPosition), gl.STATIC_DRAW);
